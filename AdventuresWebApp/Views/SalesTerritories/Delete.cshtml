@@ -1,0 +1,76 @@
+﻿@model AdventuresWebApp.Models.SalesTerritory
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SalesTerritory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Group)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Group)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesYtd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SalesYtd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesLastYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SalesLastYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CostYtd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CostYtd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CostLastYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CostLastYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rowguid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rowguid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryRegionCodeNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryRegionCodeNavigation.CountryRegionCode)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TerritoryId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
