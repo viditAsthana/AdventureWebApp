@@ -1,0 +1,55 @@
+﻿@model AdventuresWebApp.Models.CurrencyRate
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CurrencyRate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyRateDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyRateDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AverageRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndOfDayRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndOfDayRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FromCurrencyCodeNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FromCurrencyCodeNavigation.CurrencyCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ToCurrencyCodeNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ToCurrencyCodeNavigation.CurrencyCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CurrencyRateId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

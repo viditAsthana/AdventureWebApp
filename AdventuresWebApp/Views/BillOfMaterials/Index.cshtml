@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AdventuresWebApp.Models.BillOfMaterials>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bomlevel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerAssemblyQty)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductAssembly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitMeasureCodeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bomlevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerAssemblyQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Component.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductAssembly.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitMeasureCodeNavigation.UnitMeasureCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BillOfMaterialsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BillOfMaterialsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BillOfMaterialsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

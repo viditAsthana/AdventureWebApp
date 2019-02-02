@@ -1,0 +1,60 @@
+﻿@model AdventuresWebApp.Models.CurrencyRate
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>CurrencyRate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CurrencyRateId" />
+            <div class="form-group">
+                <label asp-for="CurrencyRateDate" class="control-label"></label>
+                <input asp-for="CurrencyRateDate" class="form-control" />
+                <span asp-validation-for="CurrencyRateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromCurrencyCode" class="control-label"></label>
+                <select asp-for="FromCurrencyCode" class="form-control" asp-items="ViewBag.FromCurrencyCode"></select>
+                <span asp-validation-for="FromCurrencyCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToCurrencyCode" class="control-label"></label>
+                <select asp-for="ToCurrencyCode" class="form-control" asp-items="ViewBag.ToCurrencyCode"></select>
+                <span asp-validation-for="ToCurrencyCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AverageRate" class="control-label"></label>
+                <input asp-for="AverageRate" class="form-control" />
+                <span asp-validation-for="AverageRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndOfDayRate" class="control-label"></label>
+                <input asp-for="EndOfDayRate" class="form-control" />
+                <span asp-validation-for="EndOfDayRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedDate" class="control-label"></label>
+                <input asp-for="ModifiedDate" class="form-control" />
+                <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AdventuresWebApp.Models.DatabaseLog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DatabaseUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Schema)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Object)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tsql)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.XmlEvent)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatabaseUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Schema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Object)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tsql)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XmlEvent)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DatabaseLogId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DatabaseLogId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DatabaseLogId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
