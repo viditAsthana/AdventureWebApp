@@ -1,0 +1,64 @@
+﻿@model AdventuresWebApp.Models.DatabaseLog
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DatabaseLog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PostTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DatabaseUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DatabaseUser)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Schema)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Schema)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Object)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Object)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tsql)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tsql)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.XmlEvent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.XmlEvent)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DatabaseLogId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
